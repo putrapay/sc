@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pulsa Reguler</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
+  <style type="text/css" media="all">
+  
+    .header{
+      width: 100%;
+      height: auto;
+      padding: 10px;
+    }
+    .bg_header{
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: 0px 0px 1px 1px rgba(18,17,17,0.117);
+      margin-bottom: 10px;
+      
+    }
+    .bg_header form{
+      width: 100%;
+      height: auto;
+    }
+    .bg_header p{
+      font-size: 14px;
+      margin-top: 10px;
+      padding-top:5px;
+      padding-bottom: 5px;
+      margin-bottom: 0;
+      opacity: 0.8;
+    }
+    .bg_header input{
+      outline: none;
+      border: none;
+      border-bottom: 2px solid #b71c1c;
+      margin-bottom: 10px;
+      width: 100%;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .bg_header select{
+      width: 100%;
+      border: none;
+      text-align: left;
+      background-color:white ;
+      outline: none;
+      font-size: 18px;
+      padding: 10px;
+    }
+    #card-img-operator{
+      border-radius: 5px;
+      background-color:#3949a ;
+    }
+#selected{
+  border: 0;
+  font-weight: normal;
+  opacity: 1;
+  color: black;
+}
+.list-group li{
+  padding: 15px;
+}
+.list-group span{
+  padding: 10px;
+  padding-bottom: 7px;
+  padding-top: 7px;
+  background-color: #b71c1c;
+}
+#offcanvasBottom{
+  top: 45%;
+  height: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.offcanvas-header{
+  border-bottom: 1px solid rgb(210,210,210);
+}
+.body_konten_offcanvas{
+  width: 100%;
+  height: auto;
+  padding-bottom: 5px;
+}
+.body_konten_offcanvas h1{
+  width: 50%;
+  float: left;
+  font-size: 16px;
+  opacity: 0.8;
+  
+}
+.body_konten_offcanvas h2{
+  width: 50%;
+  float: left;
+  font-size: 16px;
+  opacity: 0.8;
+  text-align: right
+}
+.offcanvas_button{
+  width: 100%;
+  bottom: 0px;
+}
+.offcanvas_button button{
+  width: 47%;
+  bottom: 0px;
+  left: 0px;
+  float: left;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+}
+.loader{
+  display: none;
+  width: 96%;
+  margin-left: 2%;
+  height: auto;
+  background-color: white;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  box-shadow: 0px 0px 1px 1px rgba(18,17,17,0.117);
+}
+
+.gradient-skeleton-loader {
+width: 100%;
+height: 15px;
+display: block;
+background: linear-gradient(
+to right,
+rgba(255, 255, 255, 0),
+rgba(255, 255, 255, 0.2) 50%,
+rgba(255, 255, 255, 0) 80%
+),
+lightgray;
+background-repeat: repeat-y;
+background-size: 50px 200px; 
+background-position: 0 0;
+}
+
+.skeleton-loader {
+margin-bottom: 7px;
+margin-top: 7px;
+width: 100%;
+height: 20px;
+display: block;
+background: linear-gradient(
+to right,
+rgba(255, 255, 255, 0),
+rgba(255, 255, 255, 0.5) 50%,
+rgba(255, 255, 255, 0) 80%
+),
+lightgray;
+background-repeat: repeat-y;
+background-size: 50px 500px;
+animation: shine 0.5s infinite; 
+}
+@keyframes shine {
+to {
+background-position: 100% 0, /* move highlight to right */ 0 0;
+}
+}
+
+#skeleton1{
+  background-color: rgb(218,218,218);
+  
+}
+#skeleton2{
+  width: 60%;
+  margin-bottom: 5px;
+  height: 10px;
+}
+#skeleton3{
+  width: 80%;
+  margin-bottom: 5px;
+  height: 10px;
+}
+
+#skel1{
+  background-color: rgb(218,218,218);
+  height: 10px;
+  width: 30%;
+}
+#skel2{
+  width: 20%;
+  margin-bottom: 5px;
+  height: 40px;
+  float: left;
+  border-radius: 10px;
+}
+#skel3{
+  width: 40%;
+  margin-bottom: 5px;
+  height: 10px;
+  float: left;
+  margin-left: 40px;
+}
+#skel5{
+  width: 60%;
+  margin-bottom: 5px;
+  height: 10px;
+  float: left;
+  margin-left: 40px;
+}
+#skel4{
+  height: 5px;
+}
+.bg_header img{
+  width: 10%;
+  height: auto;
+  background-color: #b71c1c;
+  float: left;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  margin-right: 5%;
+}
+.bg_header h3{
+  width: 85%;
+  float: left;
+  margin-top: 18px;
+  padding-bottom: 5px;
+  display: table;
+  font-weight: bold;
+  font-size: 18px;
+  vertical-align: middle;
+  border-bottom: 2px solid #b71c1c;
+}
+#kategoriDetail{
+  font-size: 14;
+}
+  </style>
+  <body style="background-color:#ededf5">
+<header class="header">
+  <div class="bg_header container">
+    <form action="" method="get" accept-charset="utf-8">
+      <p>No.Pengisian</p>
+      <input type="number" oninput="ceknomoruser()" name="" id="nomor-val" value="" required="" autofocus="" />
+    </form>
+  </div>
+  <div class="bg_header container" id="card-kategori">
+ <form action="" method="get" accept-charset="utf-8">
+   <p>Operator</p>
+   <img id="card-img-operator" src="https://i.postimg.cc/fRfrwjFj/20220708-141146.png" alt="" />
+      <h3 id="kategoriDetail">Operator Tujuan</h3>
+      <div style="clear:both;">
+      </div>
+    </form>
+  </div>
+</header>
+
+<div style="margin-top:-10px" class="container">
+  <ul class="list-group" id="list-produk">
+<li class="list-group-item d-flex justify-content-between align-items-center" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="diklik">Masukkan nomor tujuan</li>
+</ul>
+</div>
+
+<div class="container loader" id="loader-kategori">
+ <span class="skeleton-loader" id="skel1"></span>
+ <span class="skeleton-loader" id="skel2"></span>
+ <span class="skeleton-loader" id="skel3"></span>
+  <span class="skeleton-loader" id="skel5"></span>
+ <div style="clear:both;"></div>
+  <span class="skeleton-loader" id="skel4"></span>
+</div>
+
+
+<div class="container loader" id="load">
+ <span class="skeleton-loader" id="skeleton1"></span>
+ <span class="skeleton-loader" id="skeleton2"></span>
+ <span class="skeleton-loader" id="skeleton3"></span>
+ <br />
+  <span class="skeleton-loader" id="skeleton1"></span>
+ <span class="skeleton-loader" id="skeleton2"></span>
+ <span class="skeleton-loader" id="skeleton3"></span>
+ <br />
+  <span class="skeleton-loader" id="skeleton1"></span>
+ <span class="skeleton-loader" id="skeleton2"></span>
+ <span class="skeleton-loader" id="skeleton3"></span>
+</div>
+
+<div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasBottomLabel">Detail Product</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body small">
+  <div class="body_konten_offcanvas">
+    <h1>No.Pengisian:</h1>
+    <h2 id="nomor-pengisian"></h2>
+  </div>
+  <div style="clear:both">
+    
+  </div>
+  <br />
+  <div class="body_konten_offcanvas">
+    <h1>Product:</h1>
+    <h2 id="nama"></h2>
+  </div>
+   <div style="clear:both">
+  </div>
+  <br />
+  <div class="body_konten_offcanvas">
+    <h1>Harga:</h1>
+    <h2 id="harga"></h2>
+  </div>
+   <div style="clear:both">
+  </div>
+  <hr />
+  <div class="body_konten_offcanvas">
+    <h1 style="font-weight:bold;">TOTAL:</h1>
+    <h2 id="total" style="font-weight:bold;"></h2>
+  </div>
+   <div style="clear:both">
+  </div>
+  <hr />
+  <div class="offcanvas_button">
+    <button data-bs-dismiss="offcanvas" aria-label="Close" style="background-color:rgb(125,125,125); color:white; box-shadow: 0px 1px 1px 1px rgb(199,199,199)" type="button">BATAL</button>
+    <a id="url-link" href="">
+     <button style="margin-left: 6%; background-color:#b71c1c; color:white; box-shadow: 0px 1px 1px 1px rgb(199,199,199)" type="button">BELI</button>
+    </a>
+  </div>
+  
+  
+  
+  </div>
+ 
+</div>
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+
+
+// YUK, BANTU JUAL SC INI KEPADA TEMAN KAMU DAN DAPATKAN PENGHASILAN 40% DARI PENJUALAN SC. BERGABUNGLAH MENJADI MITRA ESAKU.
+let web = "https://sc.e-saku.id/public/v2/api/";
+  
+  // KODE AKTIVASI ESAKU
+  var aktivasi = "af9e07bc9041774703be465631d3faa2d11e6e1cb846801aa05edc15d591729b";
+  
+  // SC INI DIBUAT OLEH ESAKU, DAN ESAKU TIDAK BERTANGGUNG JAWAB KEPADA MITRA YANG MENJUAL SC INI, PADA DASARNYA MITRA ESAKU AKAN MENDAPATKAN KODE AKTIVASI YANG BISA DIGUNAKAN, JIKA ANDA TIDAK MENDAPATKAN KODE AKTIVASI SUDAH DIPASTIKAN ITU  BUKAN MITRA ESAKU
+  var hallo = "JASA-ESAKU";
+  
+  // kode kategori bukaolshop website anda
+  /*
+  CARA PAKAI SC PULSA.
+  AMBIL URL KATEGORI WEBSITE BUKAOLSHOP KALIAN, KEMUDIAN MASUKKAN KODE KATEGORI NYA.
+  CONTOH URL WEBSITE :: https://venuss.my.id/kategori/pulsa-indosat-309664
+  AMBIL ID KATEGORI DI BAGIAN BELAKANG 
+  CONTOH HASIL KODE KATEGORI :: pulsa-indosat-309664
+  .
+  CATATAN:; 
+  PADA DASARNYA SETIAP KODE KATEGORI AKAN MENAMPILKAN MAKSIMAL 12 PRODUK, TAPI JIKA ANDA INGIN MENAMPILKAN LEBIH DARI 12 PRODUK, BUATLAH KATEGORI SATU DAN DUA KEMUDIAN JALANKAN SCRIPT SECARA BERSAMAAN, JIKA ANDA MENGALAMI KEBINGUNVAN HUBUNGI PENJUAL SC.
+  */
+  let data = [
+  {
+    "indosat" : "indosat-pulsa-316695&page=1&urutan=murah",
+    "telkomsel" : "telkomsel-pulsa-316686&page=1&urutan=murah",
+    "tri" : "three-pulsa-316696&page=1&urutan=murah",
+    "xl" : "xl-pulsa-316697&page=1&urutan=murah",
+    "axis" : "axis-pulsa-316698&page=1&urutan=murah",
+    "smartfren" : "smartfren-pulsa-316694&page=1&urutan=murah",
+  }
+    ];
+  
+  // url web
+  var url = web+hallo+"/"+aktivasi+"/";
+
+function kategori(val){
+  var kategori = data[0][val];
+  return kategori;
+}
+
+// fungsi get api
+function getApi(dataKategori){
+$.getJSON(url+dataKategori, function(data){
+ 
+      let barang = data.produk;
+  $.each(barang, function(i, data){
+     $('#list-produk').append(`<li class="list-group-item d-flex justify-content-between align-items-center" onclick="diklik('`+data.nama+`'`+','+` '`+data.harga+`' `+','+`'`+data.url+`')" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="diklik">`+data.nama+`<span class="badge rounded-pill">`+data.harga+`</span>  </li>`);
+      });
+      $("#load").hide();
+  });
+};
+
+
+
+
+
+function ceknomoruser(){
+  let b = document.getElementById("nomor-val").value;
+  let loader = document.getElementById("load");
+  let loadKategori = document.getElementById("loader-kategori");
+  let img = document.getElementById("card-img-operator");
+  let nomor = b.replace(/[^0-9]/g).substring(0,4);
+  if(nomor == "08"){
+    $("#loader-kategori").show();
+    $("#card-kategori").hide();
+    loader.style = "display: none";
+    $("#kategoriDetail").html("Operator Tujuan");
+    img.src = "url gambar disinu"; // img default
+   $('li').remove();
+   
+   // telkomsel
+  }else if(nomor === '0811' || nomor === '0812' || nomor === '0813' || nomor === '0821' || nomor === '0822' || nomor === '0852' || nomor === '0853' || nomor === '0823' || nomor === '0851' || nomor === '0835'){
+    $("#loader-kategori").hide();
+    $("#card-kategori").show();
+    loader.style = "display: block";
+    $("li").ready(function(){
+      $("li").remove();
+      $("#kategoriDetail").html("Pulsa Telkomsel");
+      img.src = "https://bukaolshop.s3-id-jkt-1.kilatstorage.id/111033/128062126k.jpg";
+     getApi(kategori("telkomsel"));
+  });
+  
+  // Indosat
+  }else if(nomor === '0814' || nomor === '0815' || nomor === '0816' || nomor === '0855' || nomor === '0856' || nomor === '0857' || nomor === '0858'){
+    $("#loader-kategori").hide();
+    $("#card-kategori").show();
+    loader.style = "display: block";
+     $("li").ready(function(){
+      $("li").remove();
+      $("#kategoriDetail").html("Pulsa Indosat");
+      img.src = "https://bukaolshop.s3-id-jkt-1.kilatstorage.id/111033/424667491k.jpg"; // example
+      getApi(kategori("indosat"));
+      getApi(kategori("indosat2"));
+    });
+    
+    // xl axiata
+  }else if(nomor === '0818' || nomor === '0817' || nomor === '0819' || nomor === '0859' || nomor === '0877' || nomor === '0878'){
+    $("#loader-kategori").hide();
+    $("#card-kategori").show();
+    loader.style = "display: block";
+     $("li").ready(function(){
+      $("li").remove();
+      $("#kategoriDetail").html("Pulsa Xl Axiata");
+      img.src = "https://bukaolshop.s3-id-jkt-1.kilatstorage.id/111033/43351875p.jpg";
+      getApi(kategori("xl"));
+ 
+    });
+    
+    // axis
+  }else if(nomor === '0838' || nomor === '0831' || nomor === '0832' || nomor === '0833'){
+    $("#loader-kategori").hide();
+    $("#card-kategori").show();
+    loader.style = "display: block";
+     $("li").ready(function(){
+      $("li").remove();
+      $("#kategoriDetail").html("Pulsa Axis");
+      img.src = "url gambar disinu";
+      getApi(kategori("axis"));
+    });
+    
+    // tri 
+  }else if(nomor === '0895' || nomor === '0896' || nomor === '0897' || nomor === '0898' || nomor === '0899' ){
+    $("#loader-kategori").hide();
+    $("#card-kategori").show();
+    loader.style = "display: block";
+     $("li").ready(function(){
+      $("li").remove();
+      $("#kategoriDetail").html("Pulsa Tri");
+      img.src = "https://bukaolshop.s3-id-jkt-1.kilatstorage.id/111033/887343814l.jpg";
+      getApi(kategori("tri"));
+    });
+    
+    // Smartfren
+  }else if(nomor === '0881' || nomor === '0882' || nomor === '0883' || nomor === '0884' || nomor === '0885' || nomor === '0886' || nomor === '0887' || nomor === '0888' || nomor === '0889'){
+    $("#loader-kategori").hide();
+    $("#card-kategori").show();
+    loader.style = "display: block";
+     $("li").ready(function(){
+      $("li").remove();
+      $("#kategoriDetail").html("Pulsa Smartfren");
+      img.src = "url gambar disinu";
+      getApi(kategori("smartfren"));
+
+    });
+  }else if(  nomor === '0' || nomor === ' ' || nomor === null){
+     $("li").remove();
+    $("#card-kategori").show();
+    $("#loader-kategori").hide();
+    loader.style = "display: none";
+    $("#list-produk").html(`<li class="list-group-item d-flex justify-content-between align-items-center" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="diklik">Masukkan nomor tujuan</li>`);
+  }else if(nomor === 123 || nomor === 9288){
+    $("li").remove();
+    $("#card-kategori").show();
+    $("#loader-kategori").hide();
+    img.src = "url gambar disinu"; // img saat operator tidak terdeteksi
+    loader.style = "display: none";
+     $("li").remove();
+    $("#list-produk").html(`<li class="list-group-item d-flex justify-content-between align-items-center" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="diklik">Masukkan nomor tujuan dengan benar</li>`);
+  }
+  
+}
+
+    
+
+// saat data diklik
+function diklik(nama, harga, url){
+//  alert(nama +  "dan" + harga +"Url " + url);
+var nomor = document.getElementById("nomor-val").value;
+var tujuan = document.getElementById("url-link");
+$("#nomor-pengisian").html(nomor);
+  $("#nama").html(nama);
+   $("#harga").html(harga);
+$("#total").html(harga);
+tujuan.href = url+"?catatan="+nomor;
+};
+
+</script>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>
